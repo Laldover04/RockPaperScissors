@@ -1,4 +1,5 @@
 import java.awt.BorderLayout;
+import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -10,12 +11,14 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 public class GUI implements ActionListener {
     private int count = 0;
     private int windowWidth = 600;
-    private int windowHeight = 300;
+    private int windowHeight = 400;
 
     private JFrame frame;
     private JLabel label;
@@ -85,6 +88,8 @@ public class GUI implements ActionListener {
         score.setBounds(windowWidth / 2 - 40, 20, 100, 25);
         panel.add(score);
 
+        JTextArea gameLog = new JTextArea(30, 30);
+
         frame.setVisible(true);
 
     }
@@ -102,6 +107,10 @@ public class GUI implements ActionListener {
         }
         count++;
         score.setText("score 0 - " + count);
+    }
+
+    private void logMatch(String result) {
+
     }
 
     public static void main(String[] args) {
